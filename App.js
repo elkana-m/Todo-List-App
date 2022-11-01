@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import Task from './components/Task';
 
 export default function App() {
@@ -12,13 +12,21 @@ export default function App() {
 
         <View style={styles.items}>
           {/* This is where the tasks will go! */}
-          <Task text={'Task 1'}/>
-          <Task text={'Task 2'}/>
+          <Task text={'📍 9AM - Jira Training'}/>
+          <Task text={'🧪 10AM - Adam Tplan'}/>
+          <Task text={'📈 1PM - Chris & Adam'}/>
+          <Task text={'🧐 3PM - Jira'}/>
+          <Task text={'👨‍🏫 6PM - Dorcas Tutor'}/>
+          <Task text={'👨‍💻 8PM  - Kotlin / Git / Expo        🛌 12AM - Sleep'}/>
           </View>
-
 
       </View>
       
+      {/* Write a task */}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios"? "padding" : "heght"}
+        style={styles.writeTaskWrapper}
+      />
 
     </View>
   );
