@@ -45,7 +45,7 @@ export default function App() {
           behavior={Platform.OS === "ios" ? "padding" : "heght"}
           style={styles.writeTaskWrapper}>
           
-          <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
+          <TextInput style={styles.input} placeholder={'New Task'} value={task} onChangeText={text => setTask(text)} />
           <TouchableOpacity onPress={() => handleAddTask()}>
             <View style={styles.addWrapper}>
               <Text style={styles.addText}>+</Text>
@@ -60,7 +60,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: '#0F1A2E',
   },
   tasksWrapper: {
     padding: 90,
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   sectionTitle: {
+    color: '#E8EAED',
     fontSize: 24,
     fontWeight: 'bold',
   },
