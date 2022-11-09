@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, Platform, TouchableOpacity, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, Platform, TouchableOpacity, ScrollView } from 'react-native';
 import Task from './components/Task';
 
 export default function App() {
@@ -20,36 +20,38 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      {/*Today's Task*/}
-      <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's tasks</Text>
+        {/*Today's Task*/}
+        <View style={styles.tasksWrapper}>
+          <Text style={styles.sectionTitle}>Today's tasks</Text>
 
-        <View style={styles.items}>
-          {/* This is where the tasks will go! */}
-          {
-            taskItems.map((item, index) => {
-              return (
-                <TouchableOpacity key={index} onPress={() => completeTask(index)}>
-                  <Task text={item}/>
-                </TouchableOpacity>
-              ) 
-            })
-          }
+          <View style={styles.items}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+              {/* This is where the tasks will go! */}
+              {
+                taskItems.map((item, index) => {
+                  return (
+                    <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                      <Task text={item}/>
+                    </TouchableOpacity>
+                  ) 
+                })
+              }
+            </ScrollView>
           </View>
-      </View>
-      
-      {/* Write a task */}
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "heght"}
-        style={styles.writeTaskWrapper}>
+        </View>
         
-        <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
-        <TouchableOpacity onPress={() => handleAddTask()}>
-          <View style={styles.addWrapper}>
-            <Text style={styles.addText}>+</Text>
-          </View>
-        </TouchableOpacity>
-      </KeyboardAvoidingView>
+        {/* Write a task */}
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "heght"}
+          style={styles.writeTaskWrapper}>
+          
+          <TextInput style={styles.input} placeholder={'Write a task'} value={task} onChangeText={text => setTask(text)} />
+          <TouchableOpacity onPress={() => handleAddTask()}>
+            <View style={styles.addWrapper}>
+              <Text style={styles.addText}>+</Text>
+            </View>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
 
     </View>
   );
@@ -63,6 +65,9 @@ const styles = StyleSheet.create({
   tasksWrapper: {
     padding: 90,
     paddingHorizontal: 20,
+  },
+  scrollView: {
+    marginHorizontal: 20,
   },
   sectionTitle: {
     fontSize: 24,
@@ -99,4 +104,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   addText:{},
+
 });
