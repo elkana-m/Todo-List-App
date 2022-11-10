@@ -7,8 +7,11 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
-    setTaskItems([...taskItems, task])
-    setTask(null);
+    if (taskItems == " "){ alert('must add a task')}
+    else{
+      setTaskItems([...taskItems, task])
+      setTask(null);
+    } 
   }
 
   const completeTask = (index) => {
@@ -42,7 +45,7 @@ export default function App() {
         
         {/* Write a task */}
         <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "heght"}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={styles.writeTaskWrapper}>
           
           <TextInput style={styles.input} placeholder={'New Task'} value={task} onChangeText={text => setTask(text)} />
