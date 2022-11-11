@@ -7,11 +7,8 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
-    if (taskItems == " "){ alert('must add a task')}
-    else{
-      setTaskItems([...taskItems, task])
-      setTask(null);
-    } 
+    setTaskItems([...taskItems, task])
+    setTask(null); 
   }
 
   const completeTask = (index) => {
@@ -58,6 +55,12 @@ export default function App() {
 
     </View>
   );
+}
+
+function addATask(){
+  return
+    handleAddTask()
+
 }
 
 const styles = StyleSheet.create({
