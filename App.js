@@ -17,13 +17,12 @@ export default function App() {
     setTaskItems(itemsCopy);
   }
   function addTask(){
-    if (taskItems == ' ' || task == ' '){
+    if (!task || task == ' '){
       console.log('need to add a task')
     }
     else{
       return handleAddTask();
     }
-  
   }
 
   return (
