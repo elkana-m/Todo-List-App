@@ -16,6 +16,15 @@ export default function App() {
     itemsCopy.splice(index, 1);
     setTaskItems(itemsCopy);
   }
+  function addTask(){
+    if (taskItems == ' ' || task == ' '){
+      console.log('need to add a task')
+    }
+    else{
+      return handleAddTask();
+    }
+  
+  }
 
   return (
     <View style={styles.container}>
@@ -46,7 +55,7 @@ export default function App() {
           style={styles.writeTaskWrapper}>
           
           <TextInput style={styles.input} placeholder={'New Task'} value={task} onChangeText={text => setTask(text)} />
-          <TouchableOpacity onPress={() => handleAddTask()}>
+          <TouchableOpacity onPress={() => addTask()}>
             <View style={styles.addWrapper}>
               <Text style={styles.addText}>+</Text>
             </View>
@@ -57,11 +66,7 @@ export default function App() {
   );
 }
 
-function addATask(){
-  return
-    handleAddTask()
 
-}
 
 const styles = StyleSheet.create({
   container: {
