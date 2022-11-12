@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, Platform, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, 
+         KeyboardAvoidingView, Platform, 
+         TouchableOpacity, ScrollView, 
+         ToastAndroid, Alert } from 'react-native';
 import Task from './components/Task';
 
 export default function App() {
@@ -18,7 +21,7 @@ export default function App() {
   }
   function addTask(){
     if (!task || task == ' '){
-      console.log('need to add a task')
+        Platform.OS == 'ios' ? Alert.alert('Must add a task') : ToastAndroid.show('Must add a task', ToastAndroid.BOTTOM)
     }
     else{
       return handleAddTask();
