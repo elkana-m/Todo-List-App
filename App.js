@@ -21,7 +21,7 @@ export default function App() {
   }
   function addTask(){
     if (!task || task == ' '){
-        Platform.OS == 'ios' ? Alert.alert('Must add a task') : ToastAndroid.show('Must add a task', ToastAndroid.BOTTOM)
+        Alert.alert('Must add a task')
     }
     else{
       return handleAddTask();
