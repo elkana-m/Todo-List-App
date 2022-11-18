@@ -11,12 +11,16 @@ export default function SignIncreen() {
         onChangeText={onChangeText}
         value={text}
         placeholder='Email'
+        placeholderTextColor={'#ffff'}
+        color='#fff'
       />
       <TextInput 
         style={styles.input} 
         onChangeText={onChangeNumber}
         value={number}
         placeholder='Password'
+        placeholderTextColor={'#ffff'}
+        color='#fff'
         keyboardType='numeric'
         editable
       />
