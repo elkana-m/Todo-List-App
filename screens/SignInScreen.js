@@ -3,13 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View, Button, Alert } from 'react-native';
 
 export default function SignIncreen() {
+  const [email, onChangeText] = React.useState(null);
+  const [password, onChangeNumber] = React.useState(null);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Sign In</Text>
       <TextInput 
         style={styles.input} 
         onChangeText={onChangeText}
-        value={text}
+        value={email}
         placeholder='Email'
         placeholderTextColor={'#ffff'}
         color='#fff'
@@ -17,7 +19,7 @@ export default function SignIncreen() {
       <TextInput 
         style={styles.input} 
         onChangeText={onChangeNumber}
-        value={number}
+        value={password}
         placeholder='Password'
         placeholderTextColor={'#ffff'}
         color='#fff'
