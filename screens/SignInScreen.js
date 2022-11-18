@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, Alert } from 'react-native';
 
 export default function SignIncreen() {
   return (
@@ -23,6 +23,10 @@ export default function SignIncreen() {
         color='#fff'
         keyboardType='numeric'
         editable
+      />
+      <Button
+        title="Sign in"
+        onPress={() => Alert.alert('Sign In button pressed')}
       />
       <StatusBar style="auto" />
     </View>
