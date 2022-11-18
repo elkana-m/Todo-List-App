@@ -26,10 +26,13 @@ export default function SignIncreen() {
         keyboardType='numeric'
         editable
       />
-      <Button
-        title="Sign in"
-        onPress={() => Alert.alert('Sign In button pressed')}
-      />
+      <TouchableOpacity
+        style = {styles.loginBtn}
+        onPress={() => Alert.alert('Sign In button pressed')}>
+        <Text 
+          style={styles.loginText}>Sign in
+        </Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -56,4 +59,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#fff'
   },
+  loginBtn: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#621190",
+  },
+  loginText: {
+    color:'#fff'
+  }
 });
