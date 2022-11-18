@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, Alert, useState } from 'react-native';
 
 export default function SignIncreen() {
-  const [email, onChangeText] = React.useState(null);
-  const [password, onChangeNumber] = React.useState(null);
+  const [email, onChangeText] = useState(null);
+  const [password, onChangeNumber] = useState(null);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Sign In</Text>
