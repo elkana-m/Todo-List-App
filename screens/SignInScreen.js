@@ -23,7 +23,6 @@ export default function SignIncreen() {
         placeholder='Password'
         placeholderTextColor={'#ffff'}
         color='#fff'
-        keyboardType='numeric'
         secureTextEntry={true}
         editable
       />
