@@ -27,6 +27,13 @@ export default function SignIncreen() {
         secureTextEntry={true}
         editable
       />
+      <TouchableOpacity>
+        <Text 
+          style={styles.forgot_button} 
+          onPress={() => Alert.alert('Forgot Password pressed')}>
+          Forgot Password?
+        </Text>
+      </TouchableOpacity>
       <TouchableOpacity
         style = {styles.loginBtn}
         onPress={() => Alert.alert('Sign In button pressed')}>
@@ -59,6 +66,10 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#fff'
+  },
+  forgot_button:{
+    color:"#fff",
+    height: 30,
   },
   loginBtn: {
     width: "80%",
