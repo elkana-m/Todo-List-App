@@ -24,6 +24,7 @@ export default function SignIncreen() {
         placeholderTextColor={'#ffff'}
         color='#fff'
         keyboardType='numeric'
+        secureTextEntry={true}
         editable
       />
       <TouchableOpacity
