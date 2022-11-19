@@ -7,7 +7,7 @@ export default function SignIncreen() {
   const [password, setPassword] = useState(null);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Sign In</Text>
+      <Text style={styles.loginHeaderText}>Sign In</Text>
       <TextInput 
         style={styles.input} 
         onChangeText={setEmail}
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
+  loginHeaderText: {
     color: "#fff",
     fontSize: '30dp',
-    fontStyle: "italic",
+    fontWeight: "bold",
     marginBottom:50
   },
   input: {
