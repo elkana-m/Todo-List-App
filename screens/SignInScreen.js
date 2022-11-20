@@ -5,6 +5,19 @@ import { StyleSheet, Text, TextInput, View, Button, Alert, useState } from 'reac
 export default function SignIncreen() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const twoButtonAlert = (alertTitle, alertMsg, option1, option2) =>
+  Alert.alert(
+    alertTitle,
+    alertMsg,
+    [
+      {
+        text: option1,
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel"
+      },
+      { text: option2, onPress: () => console.log("OK Pressed") }
+    ]
+  );
   return (
     <View style={styles.container}>
       <Text style={styles.loginHeaderText}>Sign In</Text>
