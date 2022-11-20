@@ -61,7 +61,15 @@ export default function SignIncreen() {
           style={styles.loginGoogleText}>Sign in with Google
         </Text>
       </TouchableOpacity>
-      
+      <Text style={styles.noAccText}>Don't have an account?</Text>
+      <TouchableOpacity style={styles.signupBtn}>
+        <Text 
+          style={styles.newAccText} 
+          onPress={() => twoButtonAlert("Sign up", "Are you sure you want to sign up?","No", "Yes")}>
+          Create an account
+        </Text>
+      </TouchableOpacity>
+
       <StatusBar style="auto" />
     </View>
   );
