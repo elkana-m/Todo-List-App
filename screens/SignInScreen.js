@@ -127,5 +127,13 @@ const styles = StyleSheet.create({
   },
   loginGoogleText: {
     color: '#fff',
+  },
+  noAccText: {
+    color: "#fff",
+    paddingTop: 50,
+  },
+  newAccText: {
+    color: "#fff",
+    textDecorationLine: 'underline'
   }
 });
