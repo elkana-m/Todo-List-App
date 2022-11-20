@@ -53,6 +53,15 @@ export default function SignIncreen() {
           style={styles.loginText}>Sign in
         </Text>
       </TouchableOpacity>
+      <Text style={styles.orText}>or</Text>
+      <TouchableOpacity
+        style = {styles.loginGoogle}
+        onPress={() => Alert.alert('Sign In with Google')}>
+        <Text 
+          style={styles.loginGoogleText}>Sign in with Google
+        </Text>
+      </TouchableOpacity>
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -94,5 +103,21 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color:'#fff'
+  },
+  orText:{
+    color:"#fff",
+    marginTop: 10,
+  },
+  loginGoogle: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "rgba(1,2,4, 0.7)",
+  },
+  loginGoogleText: {
+    color: '#fff',
   }
 });
