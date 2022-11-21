@@ -21,7 +21,33 @@ export default function SignUpcreen() {
     );
   return (
     <View style={styles.container}>
-      <Text>Sign-Up screen!</Text>
+      <Text style={styles.loginHeaderText}>Sign up</Text>
+      <TextInput 
+        style={styles.input} 
+        onChangeText={setName}
+        value={name}
+        placeholder='Username'
+        placeholderTextColor={'#ffff'}
+        color='#fff'
+      />
+      <TextInput 
+        style={styles.input} 
+        onChangeText={setEmail}
+        value={email}
+        placeholder='Email'
+        placeholderTextColor={'#ffff'}
+        color='#fff'
+      />
+      <TextInput 
+        style={styles.input} 
+        onChangeText={setPassword}
+        value={password}
+        placeholder='Password'
+        placeholderTextColor={'#ffff'}
+        editable
+        color='#fff'
+        secureTextEntry={true}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -34,4 +60,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  loginHeaderText: {
+    color: "#fff",
+    fontSize: '30dp',
+    fontWeight: 'bold',
+    marginBottom:50
+  },
+  input: {
+    height: 40,
+    width: 320,
+    margin: 12,
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#fff'
+  }
 });
