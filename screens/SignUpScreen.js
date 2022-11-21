@@ -48,6 +48,22 @@ export default function SignUpcreen() {
         color='#fff'
         secureTextEntry={true}
       />
+      <TouchableOpacity
+          style = {styles.signupBtn}
+          onPress={() => Alert.alert('Sign up button pressed')}>
+          <Text 
+            style={styles.signupText}>Sign up
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.orText}>or</Text>
+        <TouchableOpacity
+          style = {styles.signupGoogle}
+          onPress={() => Alert.alert('Sign up with Google')}>
+          <Text 
+            style={styles.signupGoogleText}>Sign up with Google
+          </Text>
+        </TouchableOpacity>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -73,5 +89,33 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#fff'
+  },
+  signupBtn: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#621190",
+  },
+  signupText: {
+    color:'#fff'
+  },
+  orText:{
+    color:"#fff",
+    marginTop: 10,
+  },
+  signupGoogle: {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    backgroundColor: "rgba(1,2,4, 0.7)",
+  },
+  signupGoogleText: {
+    color: '#fff',
   }
 });
