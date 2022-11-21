@@ -63,6 +63,14 @@ export default function SignUpcreen() {
             style={styles.signupGoogleText}>Sign up with Google
           </Text>
         </TouchableOpacity>
+        <Text style={styles.haveAccText}>Already have an account?</Text>
+        <TouchableOpacity style={styles.loginBtn}>
+          <Text 
+            style={styles.newAccText} 
+            onPress={() => twoButtonAlert("Sign in", "Are you sure you want to sign in?","No", "Yes")}>
+            Sign in
+          </Text>
+        </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
@@ -117,5 +125,13 @@ const styles = StyleSheet.create({
   },
   signupGoogleText: {
     color: '#fff',
+  },
+  haveAccText: {
+    color: "#fff",
+    paddingTop: 50,
+  },
+  newAccText: {
+    color: "#fff",
+    textDecorationLine: 'underline'
   }
 });
