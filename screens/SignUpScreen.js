@@ -80,7 +80,7 @@ export default function SignUpcreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0F1A2E',
     alignItems: 'center',
     justifyContent: 'center',
   },
