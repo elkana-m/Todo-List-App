@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button, Alert, useState } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity } from 'react-native';
 
 export default function SignIncreen() {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = React.useState(null);
+  const [password, setPassword] = React.useState(null);
   const twoButtonAlert = (alertTitle, alertMsg, option1, option2) =>
   Alert.alert(
     alertTitle,
