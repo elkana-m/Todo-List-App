@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity} from 'react-native';
@@ -6,17 +7,18 @@ export default function SignUpcreen() {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const twoButtonAlert = (alertTitle, alertMsg, option1, option2) =>
+  const navigation = useNavigation();
+  const twoButtonAlert = (alertTitle, alertMsg, option1, option2, nav0, nav1) =>
     Alert.alert(
       alertTitle,
       alertMsg,
       [
         {
           text: option1,
-          onPress: () => console.log("Cancel Pressed"),
+          onPress: () => navigation.navigate(nav0),
           style: "cancel"
         },
-        { text: option2, onPress: () => console.log("OK Pressed") }
+        { text: option2, onPress: () => navigation.navigate(nav1) }
       ]
     );
   return (
@@ -67,7 +69,7 @@ export default function SignUpcreen() {
         <TouchableOpacity style={styles.loginBtn}>
           <Text 
             style={styles.newAccText} 
-            onPress={() => twoButtonAlert("Sign in", "Are you sure you want to sign in?","No", "Yes")}>
+            onPress={() => twoButtonAlert("Sign in", "Are you sure you want to sign in?","No", "Yes", "Sign_Up", "Sign_In")}>
             Sign in
           </Text>
         </TouchableOpacity>
