@@ -3,8 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity } from 'react-native';
 
 export default function SignIncreen() {
-  const [email, setEmail] = React.useState(null);
-  const [password, setPassword] = React.useState(null);
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
   const twoButtonAlert = (alertTitle, alertMsg, option1, option2) =>
   Alert.alert(
     alertTitle,
@@ -23,7 +23,7 @@ export default function SignIncreen() {
       <Text style={styles.loginHeaderText}>Sign In</Text>
       <TextInput 
         style={styles.input} 
-        onChangeText={setEmail}
+        onChangeText={(email) => setEmail(email)}
         value={email}
         placeholder='Email'
         placeholderTextColor={'#ffff'}
@@ -31,7 +31,7 @@ export default function SignIncreen() {
       />
       <TextInput 
         style={styles.input} 
-        onChangeText={setPassword}
+        onChangeText={(password) => setPassword(password)}
         value={password}
         placeholder='Password'
         placeholderTextColor={'#ffff'}

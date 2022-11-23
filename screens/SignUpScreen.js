@@ -3,9 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity} from 'react-native';
 
 export default function SignUpcreen() {
-  const [name, setName] = React.useState(null);
-  const [email, setEmail] = React.useState(null);
-  const [password, setPassword] = React.useState(null);
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
   const twoButtonAlert = (alertTitle, alertMsg, option1, option2) =>
     Alert.alert(
       alertTitle,
@@ -24,7 +24,7 @@ export default function SignUpcreen() {
       <Text style={styles.loginHeaderText}>Sign up</Text>
       <TextInput 
         style={styles.input} 
-        onChangeText={setName}
+        onChangeText={(name) => setName(name)}
         value={name}
         placeholder='Username'
         placeholderTextColor={'#ffff'}
@@ -32,7 +32,7 @@ export default function SignUpcreen() {
       />
       <TextInput 
         style={styles.input} 
-        onChangeText={setEmail}
+        onChangeText={(email) => setEmail(email)}
         value={email}
         placeholder='Email'
         placeholderTextColor={'#ffff'}
@@ -40,7 +40,7 @@ export default function SignUpcreen() {
       />
       <TextInput 
         style={styles.input} 
-        onChangeText={setPassword}
+        onChangeText={password => setPassword(password)}
         value={password}
         placeholder='Password'
         placeholderTextColor={'#ffff'}
