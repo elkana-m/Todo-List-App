@@ -1,12 +1,14 @@
+import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, 
-         KeyboardAvoidingView, Platform, 
-         TouchableOpacity, ScrollView, 
-         ToastAndroid, Alert } from 'react-native';
-import Task from './components/Task';
+import { StyleSheet, Text, View } from 'react-native';
+// import AuthStack from './navigation/authStack';
 
 export default function App() {
-  
+  return (
+    <View>
+      <Text>Hello</Text>
+    </View>
+  )
 }
 
 

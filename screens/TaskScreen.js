@@ -3,69 +3,69 @@ import { StyleSheet, Text, View, TextInput,
             TouchableOpacity, ScrollView, 
             Alert } from 'react-native';
 import React, {useState} from 'react';
-import Task from './components/Task';
+import Task from '../components/Task';
 
 export default function TaskScreen() {
     const [task, setTask] = useState();
-  const [taskItems, setTaskItems] = useState([]);
+    const [taskItems, setTaskItems] = useState([]);
 
-  const handleAddTask = () => {
-    setTaskItems([...taskItems, task])
-    setTask(null); 
-  }
-
-  const completeTask = (index) => {
-    let itemsCopy = [...taskItems];
-    itemsCopy.splice(index, 1);
-    setTaskItems(itemsCopy);
-  }
-  function addTask(){
-    if (!task || task == ' '){
-        Alert.alert('Must add a task')
+    const handleAddTask = () => {
+        setTaskItems([...taskItems, task])
+        setTask(null); 
     }
-    else{
-      return handleAddTask();
+
+    const completeTask = (index) => {
+        let itemsCopy = [...taskItems];
+        itemsCopy.splice(index, 1);
+        setTaskItems(itemsCopy);
     }
-  }
+    function addTask(){
+        if (!task || task == ' '){
+            Alert.alert('Must add a task')
+        }
+        else{
+        return handleAddTask();
+        }
+    }
 
-  return (
-    <View style={styles.container}>
+    return (
+        <View style={styles.container}>
 
-        {/*Today's Task*/}
-        <View style={styles.tasksWrapper}>
-          <Text style={styles.sectionTitle}>Today's tasks</Text>
+            {/*Today's Task*/}
+            <View style={styles.tasksWrapper}>
+            <Text style={styles.sectionTitle}>Today's tasks</Text>
 
-          <View style={styles.items}>
-            <ScrollView contentContainerStyle={styles.scrollView}>
-              {/* This is where the tasks will go! */}
-              {
-                taskItems.map((item, index) => {
-                  return (
-                    <TouchableOpacity key={index} onPress={() => completeTask(index)}>
-                      <Task text={item}/>
-                    </TouchableOpacity>
-                  ) 
-                })
-              }
-            </ScrollView>
-          </View>
-        </View>
-        
-        {/* Write a task */}
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={styles.writeTaskWrapper}>
-          
-          <TextInput style={styles.input} placeholder={'New Task'} value={task} onChangeText={text => setTask(text)} />
-          <TouchableOpacity onPress={() => addTask()}>
-            <View style={styles.addWrapper}>
-              <Text style={styles.addText}>+</Text>
+            <View style={styles.items}>
+                <ScrollView contentContainerStyle={styles.scrollView}>
+                {/* This is where the tasks will go! */}
+                {
+                    taskItems.map((item, index) => {
+                    return (
+                        <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                        <Task text={item}/>
+                        </TouchableOpacity>
+                    ) 
+                    })
+                }
+                </ScrollView>
             </View>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
+            </View>
+            
+            {/* Write a task */}
+            <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.writeTaskWrapper}>
+            
+            <TextInput style={styles.input} placeholder={'New Task'} value={task} onChangeText={text => setTask(text)} />
+            <TouchableOpacity onPress={() => addTask()}>
+                <View style={styles.addWrapper}>
+                <Text style={styles.addText}>+</Text>
+                </View>
+            </TouchableOpacity>
+            </KeyboardAvoidingView>
 
-    </View>
-  );
+        </View>
+    );
 
 }
 
