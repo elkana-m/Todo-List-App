@@ -33,22 +33,22 @@ export default function TaskScreen() {
 
             {/*Today's Task*/}
             <View style={styles.tasksWrapper}>
-            <Text style={styles.sectionTitle}>Today's tasks</Text>
 
-            <View style={styles.items}>
-                <ScrollView contentContainerStyle={styles.scrollView}>
-                {/* This is where the tasks will go! */}
-                {
-                    taskItems.map((item, index) => {
-                    return (
-                        <TouchableOpacity key={index} onPress={() => completeTask(index)}>
-                        <Task text={item}/>
-                        </TouchableOpacity>
-                    ) 
-                    })
-                }
-                </ScrollView>
-            </View>
+              <ScrollView contentContainerStyle={styles.scrollView}>
+                <Text style={styles.sectionTitle}>Today's tasks</Text>
+                <View style={styles.items}>
+                    {/* This is where the tasks will go! */}
+                    {
+                        taskItems.map((item, index) => {
+                        return (
+                            <TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                            <Task text={item}/>
+                            </TouchableOpacity>
+                        ) 
+                        })
+                    }
+                </View>
+              </ScrollView>
             </View>
             
             {/* Write a task */}

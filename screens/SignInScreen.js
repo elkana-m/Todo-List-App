@@ -21,6 +21,7 @@ export default function SignIncreen() {
         { text: option2, onPress: () => navigation.navigate(`${nav1}`) }
       ]
     );
+    const signIn = null;
   return (
     <View style={styles.container}>
       <Text style={styles.loginHeaderText}>Sign In</Text>
