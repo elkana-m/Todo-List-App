@@ -9,31 +9,31 @@ export default function SignIncreen() {
   const [password, setPassword] = React.useState('');
   const navigation = useNavigation();
   const twoButtonAlert = (alertTitle, alertMsg, option1, option2, nav0, nav1) =>
-  Alert.alert(
-    alertTitle,
-    alertMsg,
-    [
-      {
-        text: option1,
-        onPress: () => navigation.navigate(`${nav0}`),
-        style: "cancel"
-      },
-      { text: option2, onPress: () => navigation.navigate(`${nav1}`) }
-    ]
-  );
+    Alert.alert(
+      alertTitle,
+      alertMsg,
+      [
+        {
+          text: option1,
+          onPress: () => navigation.navigate(`${nav0}`),
+          style: "cancel"
+        },
+        { text: option2, onPress: () => navigation.navigate(`${nav1}`) }
+      ]
+    );
   return (
     <View style={styles.container}>
       <Text style={styles.loginHeaderText}>Sign In</Text>
-      <TextInput 
-        style={styles.input} 
+      <TextInput
+        style={styles.input}
         onChangeText={(email) => setEmail(email)}
         value={email}
         placeholder='Email'
         placeholderTextColor={'#ffff'}
         color='#fff'
       />
-      <TextInput 
-        style={styles.input} 
+      <TextInput
+        style={styles.input}
         onChangeText={(password) => setPassword(password)}
         value={password}
         placeholder='Password'
@@ -43,32 +43,32 @@ export default function SignIncreen() {
         editable
       />
       <TouchableOpacity>
-        <Text 
-          style={styles.forgot_button} 
+        <Text
+          style={styles.forgot_button}
           onPress={() => Alert.alert('Forgot Password pressed')}>
           Forgot Password?
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style = {styles.loginBtn}
-        onPress={() => Alert.alert('Sign In button pressed')}>
-        <Text 
+        style={styles.loginBtn}
+        onPress={() => navigation.navigate("Tasks")}>
+        <Text
           style={styles.loginText}>Sign in
         </Text>
       </TouchableOpacity>
       <Text style={styles.orText}>or</Text>
       <TouchableOpacity
-        style = {styles.loginGoogle}
+        style={styles.loginGoogle}
         onPress={() => Alert.alert('Sign In with Google')}>
-        <Text 
+        <Text
           style={styles.loginGoogleText}>Sign in with Google
         </Text>
       </TouchableOpacity>
       <Text style={styles.noAccText}>Don't have an account?</Text>
       <TouchableOpacity style={styles.signupBtn}>
-        <Text 
-          style={styles.newAccText} 
-          onPress={() => twoButtonAlert("Sign up", "Are you sure you want to sign up?","No", "Yes", "Sign_In", "Sign_Up")}>
+        <Text
+          style={styles.newAccText}
+          onPress={() => twoButtonAlert("Sign up", "Are you sure you want to sign up?", "No", "Yes", "Sign_In", "Sign_Up")}>
           Create an account
         </Text>
       </TouchableOpacity>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: '30dp',
     fontWeight: "bold",
-    marginBottom:50
+    marginBottom: 50
   },
   input: {
     height: 40,
@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#fff'
   },
-  forgot_button:{
-    color:"#fff",
+  forgot_button: {
+    color: "#fff",
     height: 30,
   },
   loginBtn: {
@@ -113,10 +113,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#621190",
   },
   loginText: {
-    color:'#fff'
+    color: '#fff'
   },
-  orText:{
-    color:"#fff",
+  orText: {
+    color: "#fff",
     marginTop: 10,
   },
   loginGoogle: {
