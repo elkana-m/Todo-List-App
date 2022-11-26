@@ -20,7 +20,25 @@ export default function SignUpcreen() {
         },
         { text: option2, onPress: () => navigation.navigate(nav1) }
       ]
-    );
+  );
+  function SignUp (){
+    if (name ==='' || email === '' || password === ''){
+      Alert.alert('Username, Email and Password are mandatory')
+      return;
+    }
+    else if (password.length < 8){
+      Alert.alert('Password must be more than 8 characters')
+      return;
+    }
+    else{
+      setName(name)
+      setEmail(email)
+      setPassword(password)
+      Alert.alert('Account created')
+      navigation.navigate('Tasks')
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.loginHeaderText}>Sign up</Text>
@@ -52,7 +70,7 @@ export default function SignUpcreen() {
       />
       <TouchableOpacity
           style = {styles.signupBtn}
-          onPress={() =>  Alert.alert('Account created', navigation.navigate("Tasks"))}>
+          onPress={() => SignUp()}>
           <Text 
             style={styles.signupText}>Sign up
           </Text>
