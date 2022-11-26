@@ -1,3 +1,4 @@
+import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
