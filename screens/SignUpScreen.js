@@ -52,7 +52,7 @@ export default function SignUpcreen() {
       />
       <TouchableOpacity
           style = {styles.signupBtn}
-          onPress={() => Alert.alert('Sign up button pressed')}>
+          onPress={() =>  Alert.alert('Account created', navigation.navigate("Tasks"))}>
           <Text 
             style={styles.signupText}>Sign up
           </Text>
