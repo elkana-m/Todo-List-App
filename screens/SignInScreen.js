@@ -21,7 +21,23 @@ export default function SignIncreen() {
         { text: option2, onPress: () => navigation.navigate(`${nav1}`) }
       ]
     );
-    const signIn = null;
+  function SignIn (){
+    if (email === '' || password === ''){
+      Alert.alert('Email and Password are mandatory')
+      return;
+    }
+    else if (password.length < 8){
+      Alert.alert('Password must be more than 8 characters')
+      return;
+    }
+    else{
+      setEmail(email)
+      setPassword(password)
+      console.log(email, password)
+      navigation.navigate("Tasks")
+    }
+
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.loginHeaderText}>Sign In</Text>
@@ -52,7 +68,7 @@ export default function SignIncreen() {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.loginBtn}
-        onPress={() => navigation.navigate("Tasks")}>
+        onPress={() => SignIn()}>
         <Text
           style={styles.loginText}>Sign in
         </Text>
