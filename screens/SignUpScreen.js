@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, auth, createUserWithEmailAndPassword } from 'firebase/auth';
+// import { auth, createUserWithEmailAndPassword } from '../config/firebase'
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity} from 'react-native';
 
 export default function SignUpcreen() {
-  const auth = getAuth;
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -23,7 +23,7 @@ export default function SignUpcreen() {
         { text: option2, onPress: () => navigation.navigate(nav1) }
       ]
   );
-  function SignUp (){
+  async function SignUp (){
     if (name ==='' || email === '' || password === ''){
       Alert.alert('Username, Email and Password are mandatory')
       return;
@@ -32,12 +32,15 @@ export default function SignUpcreen() {
       Alert.alert('Password must be more than 8 characters')
       return;
     }
-    else{
+    try {
+      await createUserWithEmailAndPassword(auth, email, password)
+      Alert.alert('Account created','Please login now')
+      navigation.navigate('Sign_In')
+      console.log(email, password)
+    }catch(e){
       setName(name)
       setEmail(email)
       setPassword(password)
-      Alert.alert('Account created')
-      navigation.navigate('Tasks')
     }
   };
 
