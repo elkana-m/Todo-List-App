@@ -4,8 +4,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, Alert, TouchableOpacity } from 'react-native';
 import SignUpcreen from './SignUpScreen';
+import { auth, initializeApp } from '../config/firebase'
 
 export default function SignIncreen() {
+  const auth = getAuth();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigation = useNavigation();
@@ -22,7 +24,7 @@ export default function SignIncreen() {
         { text: option2, onPress: () => navigation.navigate(`${nav1}`) }
       ]
     );
-  function SignIn (){
+  async function SignIn (){
     if (email === '' || password === ''){
       Alert.alert('Email and Password are mandatory')
       return;
@@ -31,11 +33,12 @@ export default function SignIncreen() {
       Alert.alert('Password must be more than 8 characters')
       return;
     }
-    else{
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+      navigation.navigate("Tasks")
+    } catch(error) {
       setEmail(email)
       setPassword(password)
-      console.log(email, password)
-      navigation.navigate("Tasks")
     }
 
   }
